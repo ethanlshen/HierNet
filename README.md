@@ -25,6 +25,7 @@ In the checkpoints folder, download and store the following checkpoints:
 - Model: [FF-Resnet50](https://drive.google.com/drive/folders/1Kb4KwpTPzX6VNZqzh7X6jHjUaicVEmcw?usp=drive_link) (all files)
 ## Evaluation Files
 Run the following command to evaluate a model on all datasets across all dimensions (512 for CLIP/MERU, 8-2048 for MR/FF), storing the results in --results_dir. The same results file can be used for all models in evaluate.py. A different one should be used for evaluate_pca.py. Results are stored in a nested dictionary where the first level contains keys for different datasets, the second level keys for different metrics, and the third keys for different models. The corresponding value is a np.array() containing metrics across all dimensions for the respective model.
+
 *--model* accepts the following arguments: clip, meru, ff, mrl.
 ```
 python evaluate.py --model clip --dataset_dir ./files/dataset_info.pt --imagenet_dir <path to imagenet> --results_dir <path to results>
