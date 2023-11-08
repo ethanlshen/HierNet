@@ -35,7 +35,5 @@ This command does the same for only *--model* being ff, with the exception that 
 python evaluate_pca.py --model ff --dataset_dir ./files/dataset_info.pt --imagenet_dir <path to imagenet> --results_dir <path to results>
 ```
 ## Evaluate Own Models
-
-## Notebooks
-Notebooks ...
+Custom models can be evaluated in a similar way to the provided notebooks resnet_models.ipynb and clip_models.ipynb, which provide examples on how to use our methods and datasets.
 
