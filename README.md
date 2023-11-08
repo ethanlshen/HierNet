@@ -24,16 +24,15 @@ In the checkpoints folder, download and store the following checkpoints:
 - Model: [MR-ResNet50](https://drive.google.com/file/d/1SnY6H3tbv4OkFZhfq7UgenFQ42faNjih/view?usp=drive_link)
 - Model: [FF-Resnet50](https://drive.google.com/drive/folders/1Kb4KwpTPzX6VNZqzh7X6jHjUaicVEmcw?usp=drive_link) (all files)
 ## Evaluation Files
-Run the following command to evaluate a model on all datasets across all dimensions (512 for CLIP/MERU, 8-2048 for MR/FF), storing the results in --results_dir.
+Run the following command to evaluate a model on all datasets across all dimensions (512 for CLIP/MERU, 8-2048 for MR/FF), storing the results in --results_dir. The same results file can be used for all models in evaluate.py. A different one should be used for evaluate_pca.py. Results are stored in a nested dictionary where the first level contains keys for different datasets, the second level keys for different metrics, and the third keys for different models. The corresponding value is a np.array() containing metrics across all dimensions for the respective model.
 *--model* accepts the following arguments: clip, meru, ff, mrl.
 ```
-python evaluate.py --model clip --dataset_dir ./files/dataset_info.pt --imagenet_dir /mnt/nvme0n1p2/data/ImageNet-1K
+python evaluate.py --model clip --dataset_dir ./files/dataset_info.pt --imagenet_dir <path to imagenet> --results_dir <path to results>
 ```
 This command does the same for only *--model* being ff, with the exception that embeddings are now PCA reduced from 2048-dim ResNet50.
 ```
-python evaluate_pca.py --model ff --dataset_dir ./files/dataset_info.pt --imagenet_dir /mnt/nvme0n1p2/data/ImageNet-1K --results_dir ./files/ff_pca1_data.pt
+python evaluate_pca.py --model ff --dataset_dir ./files/dataset_info.pt --imagenet_dir <path to imagenet> --results_dir <path to results>
 ```
-
 ## Evaluate Own Models
 
 ## Notebooks
